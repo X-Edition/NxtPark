@@ -34,18 +34,18 @@ Coming soon…
 ## 📂 Project Structure
 
 src/
-  ├── components/
-  │   ├── TabBar.jsx
-  │   ├── Map.jsx
-  │   └── SideScrollBar.jsx
-  ├── tabs/
-  │   ├── Home.jsx
-  │   ├── Events.jsx
-  │   └── Account.jsx
-  ├── assets/
-  │   └── (images + logo)
-  ├── App.jsx
-  └── index.jsx
+├── components/
+│   ├── TabBar.jsx
+│   ├── Map.jsx
+│   └── SideScrollBar.jsx
+├── tabs/
+│   ├── Home.jsx
+│   ├── Events.jsx
+│   └── Account.jsx
+├── assets/
+│   └── (images + logo)
+├── App.jsx
+└── index.jsx
 
 ---
 
