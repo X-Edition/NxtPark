@@ -1,0 +1,167 @@
+/* Universal Styling for the Entire App */
+
+/* Apply global styles to ensure consistency across all pages */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set the full page background color and typography */
+body {
+  background-color: #f9fafb; /* Light background for a clean, modern look */
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Header Styling */
+.header {
+  width: 100%;
+  background: #00349b;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Navbar Styling for a clean and modern navigation bar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px;
+  background: #00349b;
+  width: 100vw;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Navbar Link Styling with Smooth Hover Effects */
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Main Content Area Formatting */
+.main-content {
+  width: 90%;
+  max-width: 1200px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.page {
+  width: 75%;
+  background: white;
+  margin: auto;
+  border-radius: 12px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 20px;
+
+  text-align: center;
+}
+
+/* Footer Styling */
+.footer {
+  margin-top: auto;
+  padding: 15px;
+  background: #00349b;
+  color: white;
+  text-align: center;
+  width: 100%;
+  font-size: 14px;
+}
+
+/* Account Page Styling */
+.account-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Account Section Container */
+.account-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Each Section in Account Page */
+.account-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0px; /* was 20 */
+}
+
+/* Divider Between Sections */
+.account-divider {
+  width: 100%;
+  border: none;
+  height: 1px;
+  background: #ddd;
+  margin: 15px 0;
+}
+
+/* Buttons in Account Sections */
+.account-btn {
+  padding: 10px 20px;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background: #00349b;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.account-btn:hover {
+  background: #002080;
+}
+
+/* Special Styling for Danger Zone */
+.danger-zone {
+  color: red;
+}
+
+.delete-btn {
+  background: red;
+}
+
+.delete-btn:hover {
+  background: darkred;
+}
