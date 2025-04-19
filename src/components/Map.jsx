@@ -1,38 +1,41 @@
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
-
-const mapStyles = [
-  { elementType: "geometry", stylers: [{ color: "#1d1d1d" }] },
-  { elementType: "labels.text.fill", stylers: [{ color: "#b280ff" }] },
-  { elementType: "labels.text.stroke", stylers: [{ color: "#000000" }] },
-  { featureType: "poi", stylers: [{ visibility: "off" }] },
-  { featureType: "road", elementType: "geometry", stylers: [{ color: "#292929" }] },
-  { featureType: "water", elementType: "geometry", stylers: [{ color: "#202020" }] }
-];
-
-const mapContainerStyle = {
-  width: '100%',
-  height: '500px'
-};
-
-const center = {
-  lat: 40.7128, // Example: New York City
-  lng: -74.0060
-};
+import React, { useEffect, useState } from "react";
 
 export default function Map() {
+  const [location, setLocation] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          setLocation({
+            lat: pos.coords.latitude,
+            lng: pos.coords.longitude,
+          });
+        },
+        () => {
+          setError("Unable to access location. Please enable location services.");
+        }
+      );
+    } else {
+      setError("Geolocation is not supported by this browser.");
+    }
+  }, []);
+
   return (
-    <LoadScript googleMapsApiKey="AIzaSyC4YeTsSIsSM-heuQouUGGbYEYyLeDqRTw">
-      <GoogleMap
-        mapContainerStyle={mapContainerStyle}
-        center={center}
-        zoom={12}
-        options={{
-          styles: mapStyles,
-          disableDefaultUI: true,
-          zoomControl: true
-        }}
-      >
-      </GoogleMap>
-    </LoadScript>
+    <div style={{ width: "100%", height: "549px" }}>
+      {error ? (
+        <p>{error}</p>
+      ) : location ? (
+        <iframe
+          title="User Location"
+          style={{ width: "100%", height: "100%", border: "none" }}
+          src={`https://maps.google.com/maps?q=${location.lat},${location.lng}&output=embed`}
+          allowFullScreen
+        ></iframe>
+      ) : (
+        <p>Loading map...</p>
+      )}
+    </div>
   );
 }
