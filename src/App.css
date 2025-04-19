@@ -156,3 +156,14 @@ nav a:hover {
   color: #aaa;
   margin-bottom: 16px;
 }
+
+/*ACCOUNT - Fade in Transition*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
