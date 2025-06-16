@@ -34,7 +34,7 @@ Coming soon…
 ## 📂 Project Structure
 
 src/
-├── components/
+├── components/<br>
 │   ├── TabBar.jsx
 │   ├── Map.jsx
 │   └── SideScrollBar.jsx
